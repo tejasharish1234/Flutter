@@ -48,13 +48,13 @@ class _HomepageState extends State<Homepage> {
     setState(() {
       bmi = bmiValue;
       if (bmiValue < 17.5) {
-        color1 = Colors.red;
+        color1 = const Color.fromARGB(255, 255, 17, 0);
       } else if (bmiValue >= 18.5 && bmiValue < 25) {
-        color1 = Colors.black;
+        color1 = const Color.fromARGB(255, 8, 237, 0);
       } else if (bmiValue >= 25 && bmiValue < 30) {
-        color1 = Colors.orange;
+        color1 = const Color.fromARGB(255, 255, 85, 0);
       } else if (bmiValue >= 30) {
-        color1 = Colors.red;
+        color1 = const Color.fromARGB(255, 251, 17, 0);
       }
     });
 

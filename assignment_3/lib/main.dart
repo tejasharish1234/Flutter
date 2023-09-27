@@ -1,4 +1,4 @@
-import 'package:demo/bmi.dart';
+import 'package:demo/fan.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BMI Calculator',
+      title: 'Fan App',
       theme: ThemeData(
         primarySwatch: Colors.teal,
         useMaterial3: true,
       ),
-      home: const Homepage(),
+      home: const MyFan(),
     );
   }
 }
