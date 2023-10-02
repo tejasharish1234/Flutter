@@ -6,13 +6,14 @@ class Recents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      height: 50,
-      width: 50,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40.0), color: Colors.amber),
-      child: const Icon(Icons.tv),
-    );
+    return Padding(
+        padding: const EdgeInsets.all(10),
+        child: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40.0),
+                color: const Color.fromARGB(255, 202, 141, 28)),
+            child: const Icon(Icons.tv)));
   }
 }

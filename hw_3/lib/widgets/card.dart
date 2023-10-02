@@ -10,8 +10,9 @@ class Cards extends StatelessWidget {
     return Card(
         child: Text(
       str1,
-      style:
-          GoogleFonts.robotoSlab(fontSize: 16, backgroundColor: Colors.amber),
+      style: GoogleFonts.robotoSlab(
+          fontSize: 16,
+          backgroundColor: const Color.fromARGB(255, 202, 141, 28)),
     ));
   }
 }

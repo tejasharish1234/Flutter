@@ -8,7 +8,8 @@ class DisplayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0), color: Colors.amber),
+          borderRadius: BorderRadius.circular(10.0),
+          color: const Color.fromARGB(255, 202, 141, 28)),
       width: 250,
       height: 130,
       child: Column(

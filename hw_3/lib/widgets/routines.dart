@@ -6,18 +6,20 @@ class Routines extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      height: 90,
-      width: 90,
-      color: Colors.amber,
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Icon(Icons.sunny),
-            Text("Sunny", style: GoogleFonts.robotoSlab(fontSize: 16)),
-          ]),
-    );
+    return Padding(
+        padding: const EdgeInsets.all(10),
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          height: 90,
+          width: 90,
+          color: const Color.fromARGB(255, 202, 141, 28),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Icon(Icons.sunny),
+                Text("Sunny", style: GoogleFonts.robotoSlab(fontSize: 16)),
+              ]),
+        ));
   }
 }

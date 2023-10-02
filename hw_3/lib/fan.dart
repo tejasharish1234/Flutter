@@ -39,14 +39,18 @@ class _MyFanState extends State<MyWidget> {
           ])),
       child: Column(
         children: [
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
           Text("My House",
-              style: GoogleFonts.robotoSlab(color: Colors.amber, fontSize: 26)),
+              style: GoogleFonts.robotoSlab(
+                  color: const Color.fromARGB(255, 202, 141, 28),
+                  fontSize: 26)),
           const SizedBox(height: 20),
           const DisplayWidget(),
           const SizedBox(height: 20),
           Text("Room",
-              style: GoogleFonts.robotoSlab(color: Colors.amber, fontSize: 18)),
+              style: GoogleFonts.robotoSlab(
+                  color: const Color.fromARGB(255, 202, 141, 28),
+                  fontSize: 18)),
           const SizedBox(height: 20),
           const Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +62,9 @@ class _MyFanState extends State<MyWidget> {
           ]),
           const SizedBox(height: 20),
           Text("Routine",
-              style: GoogleFonts.robotoSlab(color: Colors.amber, fontSize: 18)),
+              style: GoogleFonts.robotoSlab(
+                  color: const Color.fromARGB(255, 202, 141, 28),
+                  fontSize: 18)),
           const SizedBox(height: 20),
           SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
@@ -67,12 +73,14 @@ class _MyFanState extends State<MyWidget> {
                   children: List.generate(10, (index) => const Routines()))),
           const SizedBox(height: 20),
           Text("Recently Used",
-              style: GoogleFonts.robotoSlab(color: Colors.amber, fontSize: 18)),
+              style: GoogleFonts.robotoSlab(
+                  color: const Color.fromARGB(255, 202, 141, 28),
+                  fontSize: 18)),
           const SizedBox(height: 20),
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            child: Row(children: List.generate(5, (index) => const Recents())),
+            child: Row(children: List.generate(10, (index) => const Recents())),
           ),
         ],
       ),

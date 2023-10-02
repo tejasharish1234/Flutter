@@ -44,27 +44,29 @@ class _HomepageState extends State<Homepage> {
     }
 
     final bmiValue = weight / ((height / 100) * (height / 100));
-
+    String text = '';
     setState(() {
       bmi = bmiValue;
-      if (bmiValue < 17.5) {
+      if (bmiValue <= 18.5) {
         color1 = const Color.fromARGB(255, 255, 17, 0);
+        text = "Underweight";
       } else if (bmiValue >= 18.5 && bmiValue < 25) {
-        color1 = Color.fromARGB(255, 0, 0, 0);
+        color1 = const Color.fromARGB(255, 0, 0, 0);
+        text = 'Normal BMI';
       } else if (bmiValue >= 25 && bmiValue < 30) {
         color1 = const Color.fromARGB(255, 255, 85, 0);
+        text = 'Moderately Overweight';
       } else if (bmiValue >= 30) {
         color1 = const Color.fromARGB(255, 251, 17, 0);
+        text = 'Obese';
       }
     });
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => DetailScreen(
-          bmi: bmi,
-          color1: color1,
-        ),
+        builder: (context) =>
+            DetailScreen(bmi: bmi, color1: color1, text1: text),
       ),
     );
   }
@@ -168,7 +170,12 @@ class _HomepageState extends State<Homepage> {
 class DetailScreen extends StatelessWidget {
   final double? bmi;
   final Color? color1;
-  const DetailScreen({super.key, required this.bmi, required this.color1});
+  final String text1;
+  const DetailScreen(
+      {super.key,
+      required this.bmi,
+      required this.color1,
+      required this.text1});
 
   @override
   Widget build(BuildContext context) {
@@ -178,12 +185,14 @@ class DetailScreen extends StatelessWidget {
           title: const Text('BMI Value'),
           backgroundColor: const Color.fromARGB(255, 200, 152, 23)),
       body: Center(
-        child: Text(
-          "Your BMI is \n$bmi",
-          style: GoogleFonts.poppins(
-              fontSize: 20, fontWeight: FontWeight.bold, color: color1),
-        ),
-      ),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Text("Your BMI is \n$bmi",
+            style: GoogleFonts.poppins(
+                fontSize: 20, fontWeight: FontWeight.bold, color: color1)),
+        Text(text1,
+            style: GoogleFonts.poppins(
+                fontSize: 20, fontWeight: FontWeight.bold, color: color1))
+      ])),
       floatingActionButton: FloatingActionButton(
           onPressed: () => {Navigator.pop(context)},
           child: const Icon(Icons.arrow_back)),
