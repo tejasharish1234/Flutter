@@ -46,7 +46,7 @@ class _HomepageState extends State<Homepage> {
     final bmiValue = weight / ((height / 100) * (height / 100));
     String text = '';
     setState(() {
-      bmi = bmiValue;
+      bmi = double.parse(bmiValue.toStringAsPrecision(4));
       if (bmiValue <= 18.5) {
         color1 = const Color.fromARGB(255, 255, 17, 0);
         text = "Underweight";
